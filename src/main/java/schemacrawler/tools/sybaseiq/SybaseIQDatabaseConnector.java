@@ -20,18 +20,31 @@
 package schemacrawler.tools.sybaseiq;
 
 
-public final class BundledDriverOptions
-  extends schemacrawler.tools.options.BundledDriverOptions
+import schemacrawler.tools.options.DatabaseConnector;
+
+public final class SybaseIQDatabaseConnector
+  extends DatabaseConnector
 {
 
   private static final long serialVersionUID = 788422181303398180L;
 
-  public BundledDriverOptions()
+  public SybaseIQDatabaseConnector()
   {
-    super("SchemaCrawler for Sybase IQ",
-          "/help/Connections.sybaseiq.txt",
+    super("/help/Connections.sybaseiq.txt",
           "/schemacrawler-sybaseiq.config.properties",
           null);
+  }
+
+  @Override
+  public String getDatabaseSystemIdentifier()
+  {
+    return "sybaseiq";
+  }
+
+  @Override
+  public String getDatabaseSystemName()
+  {
+    return "SAP Sybase IQ";
   }
 
 }
