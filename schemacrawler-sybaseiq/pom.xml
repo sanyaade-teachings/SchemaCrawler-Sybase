@@ -7,7 +7,7 @@
   <parent>
     <groupId>us.fatehi</groupId>
     <artifactId>schemacrawler-parent</artifactId>
-    <version>14.16.02</version>
+    <version>14.16.02-java7</version>
   </parent>
   <artifactId>schemacrawler-sybaseiq</artifactId>
   <packaging>jar</packaging>
@@ -18,29 +18,28 @@
       <artifactId>schemacrawler</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <!--
-    <dependency>
-      <groupId>com.sybase.jdbcx</groupId>
-      <artifactId>jconn4</artifactId>
-      <version>7.07</version>
-      <scope>provided</scope>
-    </dependency>
-    -->
   </dependencies>
   <build>
     <plugins>
+      <plugin>
+        <inherited>true</inherited>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>7</source>
+          <target>7</target>
+        </configuration>
+      </plugin>		
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
           <archive>
             <index>true</index>
-            <manifest>
-              <addClasspath>true</addClasspath>
-            </manifest>
             <manifestEntries>
               <Project>${project.name}, ${project.version}</Project>
               <Author>Sualeh Fatehi, sualeh@hotmail.com</Author>
+							<Author>Shant Stepanian</Author>
             </manifestEntries>
           </archive>
         </configuration>
