@@ -7,7 +7,7 @@
   <parent>
     <groupId>us.fatehi</groupId>
     <artifactId>schemacrawler-parent</artifactId>
-    <version>14.16.03-java7</version>
+    <version>14.16.04.01-java7</version>
   </parent>
   <artifactId>schemacrawler-sybaseiq</artifactId>
   <packaging>jar</packaging>
@@ -15,8 +15,28 @@
   <dependencies>
     <dependency>
       <groupId>us.fatehi</groupId>
-      <artifactId>schemacrawler</artifactId>
+      <artifactId>schemacrawler-tools</artifactId>
       <version>${project.version}</version>
+    </dependency>     
+    <dependency>
+      <groupId>us.fatehi</groupId>
+      <artifactId>schemacrawler-testdb</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>us.fatehi</groupId>
+      <artifactId>schemacrawler-api</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>us.fatehi</groupId>
+      <artifactId>schemacrawler-tools</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -39,16 +59,9 @@
             <manifestEntries>
               <Project>${project.name}, ${project.version}</Project>
               <Author>Sualeh Fatehi, sualeh@hotmail.com</Author>
-							<Author>Shant Stepanian</Author>
+			  <Author>Shant Stepanian</Author>
             </manifestEntries>
           </archive>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <configuration>
-          <skip>false</skip>
         </configuration>
       </plugin>
     </plugins>
