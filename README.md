@@ -2,3 +2,4 @@
 
 > Please see the [SchemaCrawler website](http://www.schemacrawler.com/) for more details.
 
+> **DEFUNCT:** Please see [schemacrawler/SchemaCrawler-Database-Plugins](https://github.com/schemacrawler/SchemaCrawler-Database-Plugins)
